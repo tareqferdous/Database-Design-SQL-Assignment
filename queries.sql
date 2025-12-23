@@ -1,3 +1,42 @@
+CREATE TABLE
+  users (
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password varchar(50) NOT NULL,
+    phone VARCHAR(15),
+    role VARCHAR(20) NOT NULL CHECK (role IN ('Admin', 'Customer'))
+  );
+
+
+CREATE TABLE
+  vehicles (
+    vehicle_id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    type
+      VARCHAR(20) NOT NULL CHECK (
+        type
+          IN ('car', 'bike', 'truck')
+      ),
+      model INT NOT NULL,
+      registration_number VARCHAR(20) NOT NULL UNIQUE,
+      rental_price DECIMAL(10, 2) NOT NULL,
+      status VARCHAR(20) NOT NULL CHECK (status IN ('available', 'rented', 'maintenance'))
+  );
+
+
+CREATE TABLE
+  bookings (
+    booking_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users (user_id),
+    vehicle_id INT REFERENCES vehicles (vehicle_id),
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    status VARCHAR(20) NOT NULL CHECK (status IN ('pending', 'confirmed', 'completed')),
+    total_cost DECIMAL(10, 2) NOT NULL
+  );
+
+
 -- Query 1
 SELECT
   b.booking_id,
