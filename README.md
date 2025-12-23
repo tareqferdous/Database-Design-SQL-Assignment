@@ -6,9 +6,9 @@ A simplified **Vehicle Rental System** database project focusing on **ERD design
 
 ## 🔗 Project Links
 
-- **GitHub Repo:** Your GitHub Repo Link
-- **ERD Link:** Your ERD Link
-- **Viva Video Link:** Your Viva Video Link
+- **GitHub Repo:** [https://github.com/tareqferdous/Database-Design-SQL-Assignment]
+- **ERD Link:** [https://drawsql.app/teams/tareq-9/diagrams/vehicle-rental-system]
+- **Viva Video Link:** [https://drive.google.com/file/d/1WSj5z8_HzcOP-SU71x4olExKAJotITsi/view?usp=sharing]
 
 ---
 
@@ -50,7 +50,7 @@ A simplified **Vehicle Rental System** database project focusing on **ERD design
 - **Bookings → Vehicle** : Many-to-One
 - Each booking connects **one user** and **one vehicle**
 
-📌 ERD designed using **Lucidchart** with PK, FK, cardinality, and status fields.
+📌 ERD designed using **Draw SQL** with PK, FK, cardinality, and status fields.
 
 ---
 
