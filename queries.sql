@@ -37,7 +37,7 @@ CREATE TABLE
   );
 
 
--- Query 1
+-- Query 1: Retrieve booking information along with: Customer name & Vehicle name
 SELECT
   b.booking_id,
   u.name AS customer_name,
@@ -50,7 +50,8 @@ FROM
   INNER JOIN users AS u ON b.user_id = u.user_id
   INNER JOIN vehicles AS v ON b.vehicle_id = v.vehicle_id;
 
--- Query 2
+
+-- Query 2: Find all vehicles that have never been booked.
 SELECT
   *
 FROM
@@ -65,7 +66,8 @@ WHERE
       b.vehicle_id = v.vehicle_id
   );
 
--- Query 3
+
+-- Query 3: Retrieve all available vehicles of a specific type (e.g. cars).
 SELECT
   *
 FROM
@@ -75,7 +77,8 @@ type
   = 'car'
   AND status = 'available';
 
--- Query 4
+
+-- Query 4: Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings.
 select
   v.name AS vehicle_name, count(b.booking_id) as total_bookings
 from
